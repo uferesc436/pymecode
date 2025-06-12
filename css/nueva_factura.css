@@ -1,0 +1,292 @@
+/* Reset de estilos y configuración básica */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-100: #0d1b2a;
+    --primary-200: #1b263b;
+    --primary-300: #415a77;
+    --accent-100: #4cc9f0;
+    --accent-200: #4895ef;
+    --text-primary: #e0e1dd;
+    --text-secondary: #778da9;
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --gradient: linear-gradient(135deg, var(--accent-200), var(--accent-100));
+}
+
+/* Encabezado */
+html,
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: var(--primary-100);
+    color: var(--text-primary);
+    line-height: 1.6;
+    flex: 1;
+}
+
+.encabezado {
+    padding: 1.5rem 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--primary-200);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background-color: var(--gradient);
+    color: var(--gradient);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: var(--gradient);
+    border-radius: 6px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.nav-links a:hover {
+    background: var(--glass-bg);
+    color: var(--text-primary);
+}
+
+.pie-pagina {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--primary-300);
+    color: var(--text-primary);
+    margin-top: auto;
+}
+
+/* Estilos para la tarjeta de crear factura */
+.tarjeta-crear-factura {
+    background: var(--primary-200);
+    padding: 2rem;
+    border-radius: 24px;
+    border: 1px solid var(--primary-300);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 60rem;
+    margin: 3rem auto;
+}
+
+.tarjeta-crear-factura h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.tarjeta-crear-factura .titulo-detalles-factura {
+    display: block;
+    margin: 1.5rem 0 1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Estilos para los formularios */
+.campo-formulario label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.campo-formulario select,
+.campo-formulario input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--primary-300);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+select option {
+    background-color: var(--primary-200);
+    color: var(--text-primary);
+}
+
+select:focus {
+    outline: 1px solid var(--accent-100);
+}
+
+.fila-flex {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.select-producto {
+    flex: 3;
+}
+
+.input-cantidad {
+    flex: 1;
+    min-width: 100px;
+}
+
+/* Estilos para la tabla de detalles */
+.tabla-detalles {
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+#tabla-detalles-factura {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#tabla-detalles-factura th,
+#tabla-detalles-factura td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--primary-300);
+}
+
+#tabla-detalles-factura th {
+    color: var(--text-primary);
+    font-weight: 600;
+    background-color: rgba(65, 90, 119, 0.3);
+}
+
+#tabla-detalles-factura tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+#tabla-detalles-factura tfoot {
+    font-weight: bold;
+}
+
+#tabla-detalles-factura tfoot td {
+    border-top: 2px solid var(--accent-200);
+    border-bottom: none;
+}
+
+.total-factura-txt {
+    text-align: right;
+}
+
+/* Estilos para los botones */
+.btn-agregar,
+.boton-enviar,
+.btn-eliminar {
+    padding: 1.2rem;
+    background: var(--gradient);
+    border: none;
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-agregar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(76, 201, 240, 0.3);
+}
+
+.btn-eliminar {
+    background: transparent;
+    color: #ff6b6b;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.btn-eliminar:hover {
+    background: rgba(255, 107, 107, 0.1);
+}
+
+.boton-enviar {
+    width: 100%;
+}
+.boton-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(76, 201, 240, 0.3);
+}
+
+.botonera {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+/* Estilos de ayuda */
+.agregar-detalle {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px dashed var(--primary-300);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .fila-flex {
+        flex-direction: column;
+    }
+
+    .input-cantidad {
+        width: 100%;
+    }
+
+    .tarjeta-crear-factura {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    .encabezado {
+        padding: 1rem 5%;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-agregar {
+        width: 100%;
+    }
+
+    .botonera {
+        justify-content: center;
+    }
+
+    #tabla-detalles-factura th,
+    #tabla-detalles-factura td {
+        padding: 0.75rem 0.5rem;
+    }
+}
